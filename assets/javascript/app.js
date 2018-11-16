@@ -6,19 +6,17 @@ window.onload = function() {
   $("#restart-button").on("click", stopwatch.reset);
 };
 
-//declaring global variables
+//variables
 var intervalId;
 var clockRunning = false;
 var rightAnswers = 0;
 
-// stopwatch object which contains the clock functions
+// timer
 var stopwatch = {
-  // setting the inital time to 60 seconds
-  time: 60,
+  time: 30,
 
-  // function that checks for right answers and updates the score
+  // check answers
   rightCount: function() {
-    //checks the selection that is clicked on for the value "right"
     if (clockRunning) {
       var selection = $(this)
         .val()
@@ -27,21 +25,20 @@ var stopwatch = {
         rightAnswers++;
       }
 
-      //if player gets all 7 questions right, the game ends
+      // user wins
       else if (rightAnswers > 7) {
         stopwatch.stop();
       }
     }
 
-    //prevent a selection from being made if the game hasn't started
+    // don't start until timer is on
     else if (!clockRunning) {
       event.preventDefault();
     }
   },
 
-  //function that runs if the "reset" button is clicked
+  // play again
   reset: function() {
-    //the time and score reset, clock stops, and choices are deselected
     stopwatch.stop();
     stopwatch.time = 60;
     rightAnswers = 0;
@@ -49,7 +46,7 @@ var stopwatch = {
     $("input[type='radio']").prop("checked", false);
   },
 
-  //function that starts the countdown clock
+  // start countdown
   start: function() {
     if (!clockRunning) {
       intervalId = setInterval(stopwatch.count, 1000);
@@ -57,33 +54,33 @@ var stopwatch = {
     }
   },
 
-  //function that stops the countdown clock and ends the game
+  // stop countdown
   stop: function() {
     clearInterval(intervalId);
     clockRunning = false;
 
-    //instead of the remaining time, the score is displayed in the header
+    // shows final score
     $("#time-remaining").html("Score:" + rightAnswers + "/7");
   },
 
-  //function initialized in the start function, counts down in intervals of 1000 ms
+  // timer for countdown
   count: function() {
     //as long as there is still time left on the clock, keep counting down
     if (stopwatch.time > 0) {
       stopwatch.time--;
       var converted = stopwatch.timeConverter(stopwatch.time);
 
-      //time remaining displays in the header
+      //time remaining
       $("#time-remaining").text(converted);
     }
 
-    //when the clock reaches 0, stop counting down
+    // stop countdown when time is done
     else {
       stopwatch.stop();
     }
   },
 
-  //function that converts the time to display it in minutes and seconds
+  // time in minutes and seconds
   timeConverter: function(t) {
     var minutes = Math.floor(t / 60);
     var seconds = t - minutes * 60;

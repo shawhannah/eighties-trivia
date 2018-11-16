@@ -11,7 +11,6 @@
       href="https://fonts.googleapis.com/css?family=Poppins"
       rel="stylesheet"
     />
-    />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -26,19 +25,26 @@
 
   <body>
     <header>
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">Eighties Movie Trivia</h1>
-          <p class="lead">What do you know about the coolest movies ever?</p>
+      <div class="jumbotron jumbotron-fluid title-photo">
+        <div class="container titles">
+          <h1 class="display-4 trivia-title">EIGHTIES MOVIE TRIVIA</h1>
+          <p class="lead sub-title">
+            Show what you know about the coolest movies ever
+          </p>
         </div>
       </div>
     </header>
 
-    <button class="button" id="start-button">Let's Go</button>
-    <div class="countdown">COUNTDOWN</div>
-    <div id="time-remaining">1:00</div>
-
-    <br />
+    <div class="row">
+      <div class="col get-started">
+        <h2 class="play-game">Click the button to get started</h2>
+        <button class="button" id="start-button">LET'S PLAY</button>
+      </div>
+      <div class="col countdown-timer">
+        <h2 class="countdown">Countdown</h2>
+        <h2 class="seconds" id="time-remaining">00:30</h2>
+      </div>
+    </div>
 
     <div class="trivia">
       1. Which 1980s movie has one of the most iconic endings including an
@@ -71,54 +77,61 @@
 
     <br />
 
-    <div class="trivia">3. What is the state bird?</div>
+    <div class="trivia">
+      3. What song does Matthew Boderick's character sing during the parade
+      scene in "Ferris Bueller's Day Off?"
+    </div>
 
     <form class="choices">
-      <input type="radio" name="3" class="choice" value="right" /> Northern
-      Mockingbird
-      <input type="radio" name="3" class="choice" value="wrong" /> Bald Eagle
-      <input type="radio" name="3" class="choice" value="wrong" /> Brown Pelican
-      <input type="radio" name="3" class="choice" value="wrong" /> Southern
-      Mockingbird
+      <input type="radio" name="3" class="choice" value="wrong" /> Get Up Offa
+      That Thing
+      <input type="radio" name="3" class="choice" value="wrong" /> Shout (You
+      Make Me Wanna)
+      <input type="radio" name="3" class="choice" value="right" /> Twist and
+      Shout <input type="radio" name="3" class="choice" value="wrong" /> Build
+      Me Up Buttercup
     </form>
 
     <br />
 
     <div class="trivia">
-      4. Texas was an independent nation from 1836 until which year?
+      4. In "Say Anything," what did John Cusack's character get in return when
+      he gave his love interest his heart?
     </div>
 
     <form class="choices">
-      <input type="radio" name="4" class="choice" value="wrong" /> 1868
-      <input type="radio" name="4" class="choice" value="wrong" /> 2018
-      <input type="radio" name="4" class="choice" value="wrong" /> 1901
-      <input type="radio" name="4" class="choice" value="right" /> 1846
-    </form>
-
-    <br />
-
-    <div class="trivia">5. What is the only natural lake in the state?</div>
-
-    <form class="choices">
-      <input type="radio" name="5" class="choice" value="wrong" /> Lake Travis
-      <input type="radio" name="5" class="choice" value="right" /> Caddo Lake
-      <input type="radio" name="5" class="choice" value="wrong" /> Toledo Bend
-      Reservoir
-      <input type="radio" name="5" class="choice" value="wrong" /> Lady Bird
-      Lake
+      <input type="radio" name="4" class="choice" value="wrong" /> A kiss
+      <input type="radio" name="4" class="choice" value="wrong" /> A slap in the
+      face <input type="radio" name="4" class="choice" value="wrong" /> A
+      boombox <input type="radio" name="4" class="choice" value="right" /> A pen
     </form>
 
     <br />
 
     <div class="trivia">
-      6. How much of the nation's total area does Texas take up?
+      5. How many students were stuck in Saturday Detention in "The Breakfast
+      Club?"
     </div>
 
     <form class="choices">
-      <input type="radio" name="6" class="choice" value="wrong" /> 3.8%
-      <input type="radio" name="6" class="choice" value="wrong" /> 11.7%
-      <input type="radio" name="6" class="choice" value="right" /> 7.4%
-      <input type="radio" name="6" class="choice" value="wrong" /> 18.3%
+      <input type="radio" name="5" class="choice" value="wrong" /> Six
+      <input type="radio" name="5" class="choice" value="right" /> Five
+      <input type="radio" name="5" class="choice" value="wrong" /> Seven
+      <input type="radio" name="5" class="choice" value="wrong" /> Four
+    </form>
+
+    <br />
+
+    <div class="trivia">
+      6. In "Ferris Bueller's Day Off," what make of car did Alan Ruck's
+      character "borrow" from his dad?
+    </div>
+
+    <form class="choices">
+      <input type="radio" name="6" class="choice" value="wrong" /> Porsche
+      <input type="radio" name="6" class="choice" value="wrong" /> Maserati
+      <input type="radio" name="6" class="choice" value="right" /> Ferrari
+      <input type="radio" name="6" class="choice" value="wrong" /> Mercedes
     </form>
 
     <br />
@@ -193,10 +206,10 @@
       Methodist University
     </form>
 
-    <br />
-
-    <button class="button" id="done-button">Stop Countdown</button>
-    <button id="restart-button">Play Again</button>
+    <div class="bottom-buttons">
+      <button class="button" id="done-button">FINISH</button>
+      <button id="restart-button">RETRY</button>
+    </div>
 
     <!-- link to external javaScript file -->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
